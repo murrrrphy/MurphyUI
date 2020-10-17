@@ -1,0 +1,26 @@
+<template>
+    <h1>Tabs 示例</h1>
+    <Demo :component="TabsDemo"/>
+</template>
+
+<script lang="ts">
+    import Demo from "./Demo.vue";
+    import TabsDemo from "./Tabs.demo.vue"
+
+    export default {
+        name: "TabsDemo",
+        components: {
+            Demo,
+            TabsDemo
+        },
+        setup() {
+            return {
+                TabsDemo
+            }
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>
