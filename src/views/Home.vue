@@ -6,7 +6,7 @@
                 <h1>墨菲UI</h1>
                 <h2>一个很厉害的UI</h2>
                 <p class="actions">
-                    <a href="https://github.com/murrrrphy/Murphy-UI">GitHub</a>
+                    <a href="https://github.com/murrrrphy/MurphyUI" target="_blank">GitHub</a>
                     <router-link to="/doc">开始</router-link>
                 </p>
             </div>
