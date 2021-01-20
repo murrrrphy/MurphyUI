@@ -5,9 +5,6 @@
                 <use xlink:href="#icon-water"></use>
             </svg>
         </router-link>
-        <ul class="menu">
-            <router-link to="/doc">文档</router-link>
-        </ul>
         <svg v-if="toggleMenuButtonVisible"
               class="toggleAside"
               @click="toggleMenu">
