@@ -2,8 +2,9 @@
     <div class="topnav">
         <router-link to="/" class="logo">
             <svg class="icon">
-                <use xlink:href="#icon-water"></use>
+                <use xlink:href="#icon-M"></use>
             </svg>
+            <p>urphyUI</p>
         </router-link>
         <svg v-if="toggleMenuButtonVisible"
               class="toggleAside"
@@ -51,9 +52,16 @@
         > .logo {
             max-width: 6em;
             margin-right: auto;
+            display: flex;
+            align-items: center;
             > svg {
                 width: 32px;
                 height: 32px;
+            }
+            > p {
+                color: white;
+                margin-left: -5px;
+                margin-bottom: -5px;
             }
         }
         > .menu {

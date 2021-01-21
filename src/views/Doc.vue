@@ -89,9 +89,10 @@
     }
 
     aside {
-        background: lightblue;
+        background: #4457c0;
+        color: #eff8ff;
         width: 150px;
-        padding: 16px 0;
+        padding-bottom: 16px;
         position: fixed;
         top: 0;
         left: 0;
@@ -102,6 +103,7 @@
         > h2 {
             padding: 0 16px;
             margin-bottom: 4px;
+            color: #94b4a4;
         }
 
         > ol {
