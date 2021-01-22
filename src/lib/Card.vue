@@ -45,7 +45,8 @@
 
     > p {
       font-size: 14px;
-      padding-top: 5px;
+      padding: 10px 0;
+      margin: 0 20px;
     }
   }
 </style>

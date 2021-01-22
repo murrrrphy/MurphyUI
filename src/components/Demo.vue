@@ -1,9 +1,10 @@
 <template>
     <div class="demo">
-        <h2>{{component.__sourceCodeTitle}}</h2>
+        <h2>{{Header}}</h2>
         <div class="demo-component">
             <component :is="component"/>
         </div>
+        <Card :title="title" :content="content" />
         <div class="demo-actions">
             <Button @click="showCode" v-if="!codeVisible">查看代码</Button>
             <Button @click="hideCode" v-else>隐藏代码</Button>
@@ -20,12 +21,14 @@
     import "prismjs";
     import "prismjs/themes/prism.css";
     import {computed, ref} from "vue";
+    import Card from '../lib/Card.vue';
 
     const Prism = (window as any).Prism;
 
     export default {
         name: "Demo",
         components: {
+            Card,
             Button
         },
         props: {
@@ -42,12 +45,20 @@
             const hideCode = () => {
                 codeVisible.value = false
             }
+            const Header = props.component.__sourceCodeTitle.slice(1,props.component.__sourceCodeTitle.indexOf("!"))
+            const title = props.component.__sourceCodeTitle
+                .slice(props.component.__sourceCodeTitle.indexOf("!")+1,props.component.__sourceCodeTitle.indexOf("#"))
+            const content = props.component.__sourceCodeTitle
+                .slice(props.component.__sourceCodeTitle.indexOf("#")+1)
             return {
                 Prism,
                 html,
                 codeVisible,
                 showCode,
-                hideCode
+                hideCode,
+                Header,
+                title,
+                content
             }
         }
     }
@@ -58,6 +69,11 @@
     .demo {
         border: 1px solid $border-color;
         margin: 16px 0 32px;
+        width: 500px;
+
+        @media (max-width: 500px) {
+            width: 300px;
+        }
 
         > h2 {
             font-size: 20px;

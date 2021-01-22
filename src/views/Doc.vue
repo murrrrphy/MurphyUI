@@ -85,6 +85,7 @@
             flex-grow: 1;
             padding: 16px;
             background: white;
+            z-index: 12;
         }
     }
 
