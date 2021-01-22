@@ -40,7 +40,7 @@
     > .leftChild {
       position: absolute;
       top: 2px;
-      left: 2px;
+      left: 4px;
       height: $h2;
       width: $h2;
       display: none;
@@ -51,7 +51,7 @@
     > .rightChild {
       position: absolute;
       top: 2px;
-      left: 24px;
+      left: 22px;
       height: $h2;
       width: $h2;
       color: white;

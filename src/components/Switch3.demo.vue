@@ -7,7 +7,7 @@
     <Switch v-model:value="bool1" left-child="开" right-child="关"></Switch>
   </div>
   <div>
-    <Switch v-model:value="bool2" left-child="Yes" right-child="No"></Switch>
+    <Switch v-model:value="bool2" left-child="Y" right-child="N"></Switch>
   </div>
   <div>
     <Switch v-model:value="bool3" left-child="☀" right-child="🌙"></Switch>
