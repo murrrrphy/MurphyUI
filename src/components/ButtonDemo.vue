@@ -99,7 +99,7 @@
       const columns2 = [
         {
           title: '事件名称',
-          key: 'action'
+          key: 'property'
         },
         {
           title: '说明',
@@ -112,7 +112,7 @@
       ]
       const data2 = [
         {
-          action: 'click',
+          property: 'click',
           illustrate: '点击按钮时的回调',
           callback: '(event) => void'
         }
@@ -133,31 +133,5 @@
 </script>
 
 <style lang="scss" scoped>
-  h1 {
-    margin-left: 52px;
-    margin-top: -10px;
-  }
-  h2 {
-    margin: 30px auto 30px 52px;
-  }
-
-  .demoWrapper {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-
-  .inlineBlock {
-    display: inline-block;
-  }
-
-  p {
-    font-size: 14px;
-    padding: 10px 10px 10px 52px;
-  }
-  
-  Table {
-    margin: 10px 10px 10px 52px;
-    width: 90%;
-  }
+  @import "index";
 </style>

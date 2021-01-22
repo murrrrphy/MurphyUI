@@ -1,5 +1,5 @@
 <demo>
-    支持 disabled
+    支持 disabled!不可用#Switch 失效状态。
 </demo>
 
 <template>

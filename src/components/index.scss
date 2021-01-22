@@ -1,0 +1,27 @@
+h1 {
+  margin-left: 52px;
+  margin-top: -10px;
+}
+h2 {
+  margin: 30px auto 30px 52px;
+}
+
+.demoWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.inlineBlock {
+  display: inline-block;
+}
+
+p {
+  font-size: 14px;
+  padding: 10px 10px 10px 52px;
+}
+
+Table {
+  margin: 10px 10px 10px 52px;
+  width: 90%;
+}
