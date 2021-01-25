@@ -4,6 +4,8 @@
 
 <template>
   <Button loading>加载中</Button>
+  <Button level="main" loading>加载中</Button>
+  <Button level="danger" loading>加载中</Button>
 </template>
 
 <script lang="ts">

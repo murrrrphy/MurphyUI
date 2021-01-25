@@ -64,13 +64,13 @@
           property: 'leftChild',
           illustrate: '选中时的内容',
           type: 'string',
-          default: ''
+          default: '-'
         },
         {
           property: 'rightChild',
           illustrate: '未选中时的内容',
           type: 'string',
-          default: ''
+          default: '-'
         },
       ]
       const columns2 = [

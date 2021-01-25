@@ -1,5 +1,5 @@
 <demo>
-    常规使用
+    常规使用!基本#第一个对话框
 </demo>
 
 <template>
@@ -13,7 +13,7 @@
             <div>hello world!</div>
         </template>
         <template v-slot:title>
-            <strong>加粗的标题</strong>
+            <strong>标题</strong>
         </template>
     </Dialog>
 </template>
@@ -35,9 +35,10 @@
                 x.value = true;
             };
             const f1 = () => {
-                return false;
+                x.value = false;
             };
             const f2 = () => {
+                x.value = false;
             };
             return {
                 x,
