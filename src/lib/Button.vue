@@ -2,8 +2,9 @@
   <button class="murphy-button"
           :class="classes"
           :disabled="disabled">
-        <span v-if="loading"
-              class="murphy-loadingIndicator"></span>
+    <svg class="icon" v-if="loading">
+      <use xlink:href="#icon-loading"/>
+    </svg>
     <slot/>
   </button>
 </template>
@@ -65,6 +66,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    vertical-align: middle;
     white-space: nowrap;
     background: white;
     color: $color;
@@ -174,10 +176,6 @@
           background: darken($blue, 10%);
           border-color: darken($blue, 10%);
         }
-
-        > .murphy-loadingIndicator {
-          border-color: white white white transparent;
-        }
       }
 
       &.murphy-level-danger {
@@ -189,10 +187,6 @@
         &:focus {
           background: darken($red, 10%);
           border-color: darken($red, 10%);
-        }
-
-        > .murphy-loadingIndicator {
-          border-color: white white white transparent;
         }
       }
 
@@ -206,15 +200,10 @@
       }
     }
 
-    > .murphy-loadingIndicator {
-      width: 10px;
-      height: 10px;
-      display: inline-block;
-      margin-right: 8px;
-      border-radius: 8px;
-      border-style: solid;
-      border-color: $blue $blue $blue transparent;
-      border-width: 2px;
+    > .icon {
+      height: 1em;
+      width: 1em;
+      margin-right: .5em;
       animation: murphy-span 1s infinite linear;
     }
   }
