@@ -1,11 +1,12 @@
 <demo>
-    标签示例
+    标签示例!基本#通过currentTab来控制默认选中哪一项
 </demo>
 
 <template>
-    <Tabs v-model:selected="x">
-        <Tab title="导航1">内容1</Tab>
-        <Tab title="导航2">内容2</Tab>
+    <Tabs v-model:selected="currentTab">
+        <Tab title="Tab1">content of Tab1</Tab>
+        <Tab title="Tab2">content of Tab2</Tab>
+        <Tab title="Tab3">content of Tab3</Tab>
     </Tabs>
 </template>
 
@@ -21,8 +22,8 @@
             Tab
         },
         setup() {
-            const x = ref('导航1');
-            return {x}
+            const currentTab = ref('Tab1');
+            return {currentTab}
         }
     }
 </script>

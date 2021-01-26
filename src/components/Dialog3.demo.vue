@@ -38,7 +38,6 @@
       const f1 = () => {
         loading.value = true;
         setTimeout(()=>{
-          console.log(111);
           x.value = false;
           loading.value = false;
         },1500)
