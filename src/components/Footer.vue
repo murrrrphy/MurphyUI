@@ -3,16 +3,16 @@
     <p>欢迎使用MurphyUI</p>
     <p>作者邮箱：<a href="mailto:987127314@qq.com">987127314@qq.com</a></p>
     <a target="_blank" href="https://github.com/murrrrphy">
-      <svg>
-        <use xlink:href="#icon-GitHub"></use>
-      </svg>
+      <Icon name="GitHub" />
     </a>
   </footer>
 </template>
 
 <script>
+  import Icon from '../lib/Icon.vue'
   export default {
-    name: "Footer"
+    name: "Footer",
+    components: {Icon}
   }
 </script>
 
@@ -28,7 +28,7 @@
       margin: 20px auto auto 100px;
     }
 
-    svg {
+    .icon {
       position: absolute;
       right: 8%;
       top: 60%;

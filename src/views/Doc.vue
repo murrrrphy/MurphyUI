@@ -29,6 +29,9 @@
           <li>
             <router-link to="/doc/tabs">Tabs 组件</router-link>
           </li>
+          <li>
+            <router-link to="/doc/input">Input 组件</router-link>
+          </li>
         </ol>
       </aside>
       <main>
@@ -56,7 +59,7 @@
 
 
 <style lang="scss" scoped>
-  $aside-index: 10;
+  $aside-index: 15;
   .layout {
     display: flex;
     flex-direction: column;

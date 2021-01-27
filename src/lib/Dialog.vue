@@ -9,18 +9,10 @@
             <span class="murphy-dialog-close" @click="close"></span>
           </header>
           <main>
-            <svg v-if="type==='info'">
-              <use xlink:href="#icon-info"></use>
-            </svg>
-            <svg v-if="type==='success'">
-              <use xlink:href="#icon-success"></use>
-            </svg>
-            <svg v-if="type==='error'">
-              <use xlink:href="#icon-error"></use>
-            </svg>
-            <svg v-if="type==='warning'">
-              <use xlink:href="#icon-warning"></use>
-            </svg>
+            <Icon v-if="type==='info'" name="info"/>
+            <Icon v-if="type==='success'" name="success"/>
+            <Icon v-if="type==='error'" name="error"/>
+            <Icon v-if="type==='warning'" name="warning"/>
             <slot name="content"/>
           </main>
           <div class="footerTop" v-if="!type"></div>
@@ -36,10 +28,12 @@
 
 <script lang="ts">
   import Button from './Button.vue';
+  import Icon from './Icon.vue';
 
   export default {
     name: 'Dialog',
     components: {
+      Icon,
       Button
     },
     props: {
@@ -122,12 +116,14 @@
       padding: 24px 16px;
       display: flex;
       flex-wrap: nowrap;
-      > svg {
+
+      >.icon {
         height: 1.5em;
         width: 1.5em;
         margin-right: 16px;
       }
     }
+
     > .footerTop {
       border-top: 1px solid $border-color;
     }

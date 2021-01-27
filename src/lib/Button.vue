@@ -2,18 +2,18 @@
   <button class="murphy-button"
           :class="classes"
           :disabled="disabled">
-    <svg class="icon" v-if="loading">
-      <use xlink:href="#icon-loading"/>
-    </svg>
+    <Icon v-if="loading" name="loading" />
     <slot/>
   </button>
 </template>
 
 <script lang="ts">
   import {computed} from 'vue';
+  import Icon from './Icon.vue';
 
   export default {
     name: 'Button',
+    components: {Icon},
     props: {
       theme: {
         type: String,
