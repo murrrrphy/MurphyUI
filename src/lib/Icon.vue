@@ -1,6 +1,6 @@
 <template>
   <svg class="icon">
-    <use :xlink:href=`#icon-${name}` />
+    <use :xlink:href=`#icon-${name}`></use>
   </svg>
 </template>
 
