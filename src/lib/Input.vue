@@ -1,13 +1,19 @@
 <template>
   <div class="wrapper" :class="{error}">
     <input :value="value" type="text" :disabled="disabled" :readonly="readonly"/>
+    <template v-if="error">
+      <Icon name="error" />
+      <span class="errorMessage">{{error}}</span>
+    </template>
 
   </div>
 </template>
 
 <script lang="ts">
+  import Icon from './Icon.vue';
   export default {
     name: "Input",
+    components: {Icon},
     props: {
       value: {
         type: String
@@ -36,13 +42,20 @@
   $box-shadow-color: rgba(0,0,0,0.5);
   .wrapper {
     font-size: $font-size;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    > :not(:last-child) {
+      margin-right: .5em;
+    }
     &.error {
       > input {
         border-color: $red;
         &:hover {
           border-color: $red;
         }
+      }
+      > .errorMessage {
+        color: $red;
       }
     }
     > input {
