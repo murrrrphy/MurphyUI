@@ -17,7 +17,6 @@
 </template>
 
 <script lang="ts">
-
 import Tab from './Tab.vue';
 import {ref, onMounted, watchEffect, computed} from 'vue';
 

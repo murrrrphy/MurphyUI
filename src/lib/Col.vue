@@ -1,26 +1,43 @@
 <template>
-  <div class="col">
-    <slot/>
+  <div class="col" :class="[`col-${span}`, offset && `offset-${offset}`]"
+       :style="{paddingLeft: gutter/2+'px', paddingRight: gutter/2+'px'}">
+    <div style="border: 1px solid green; height: 100px;">
+      <slot/>
+    </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+  import {inject} from 'vue'
+
   export default {
-    name: "Col"
+    name: "Col",
+    props: {
+      span: [Number,String],
+      offset: [Number,String]
+    },
+    setup() {
+      const gutter = inject('gutter')
+      return {gutter}
+    }
   }
 </script>
 
 <style lang="scss" scoped>
   .col {
-    height: 100px;
-    background: grey;
-    width: 50%;
-    border: 1px solid red;
+    width: 100%;
 
-    $class: col-;
+    $class-prefix: col-;
     @for $n from 1 through 24 {
-      &.#{$class}#{$n} {
+      &.#{$class-prefix}#{$n} {
         width: ($n/24)*100%;
+      }
+    }
+
+    $class-prefix: offset-;
+    @for $n from 1 through 24 {
+      &.#{$class-prefix}#{$n} {
+        margin-left: ($n/24)*100%;
       }
     }
   }
