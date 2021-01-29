@@ -17,11 +17,11 @@
 </template>
 
 <script lang="ts">
-    import Button from "../lib/Button.vue";
+    import Button from "./Button.vue";
     import "prismjs";
     import "prismjs/themes/prism.css";
     import {computed, ref} from "vue";
-    import Card from '../lib/Card.vue';
+    import Card from './Card.vue';
 
     const Prism = (window as any).Prism;
 

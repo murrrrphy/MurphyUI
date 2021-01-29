@@ -12,9 +12,9 @@
 </template>
 
 <script lang="ts">
-  import Demo from './Demo.vue';
-  import TabsDemo1 from './Tabs1.demo.vue';
-  import TabsDemo2 from './Tabs2.demo.vue';
+  import Demo from '../lib/Demo.vue';
+  import TabsDemo1 from './tabsDemo/Tabs1.demo.vue';
+  import TabsDemo2 from './tabsDemo/Tabs2.demo.vue';
   import Table from '../lib/Table.vue';
 
   export default {

@@ -84,7 +84,7 @@ Lockfile:
   "@babel/parser@^7.11.5":
     version "7.11.5"
     resolved "https://registry.npm.taobao.org/@babel/parser/download/@babel/parser-7.11.5.tgz#c7ff6303df71080ec7a4f5b8c003c58f1cf51037"
-    integrity sha1-x/9jA99xCA7HpPW4wAPFjxz1EDc=
+    integrity sha1-dialogVisible/9jA99xCA7HpPW4wAPFjxz1EDc=
   
   "@babel/types@^7.10.4":
     version "7.11.0"

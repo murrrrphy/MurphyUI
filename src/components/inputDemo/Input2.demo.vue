@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import Input from '../lib/Input.vue'
+  import Input from '../../lib/Input.vue'
 
   export default {
     name: "Input1.demo",

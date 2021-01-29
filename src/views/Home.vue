@@ -34,8 +34,8 @@
 </template>
 
 <script lang="ts">
-  import Topnav from '../components/Topnav.vue';
-  import Footer from '../components/Footer.vue';
+  import Topnav from '../lib/Topnav.vue';
+  import Footer from '../lib/Footer.vue';
   import Icon from '../lib/Icon.vue';
 
   export default {

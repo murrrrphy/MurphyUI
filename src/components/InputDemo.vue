@@ -18,12 +18,12 @@
 </template>
 
 <script>
-  import Demo from './Demo.vue'
-  import InputDemo1 from './Input1.demo.vue'
-  import InputDemo2 from './Input2.demo.vue'
-  import InputDemo3 from './Input3.demo.vue'
-  import InputDemo4 from './Input4.demo.vue'
-  import InputDemo5 from './Input5.demo.vue'
+  import Demo from '../lib/Demo.vue'
+  import InputDemo1 from './inputDemo/Input1.demo.vue'
+  import InputDemo2 from './inputDemo/Input2.demo.vue'
+  import InputDemo3 from './inputDemo/Input3.demo.vue'
+  import InputDemo4 from './inputDemo/Input4.demo.vue'
+  import InputDemo5 from './inputDemo/Input5.demo.vue'
   import Table from '../lib/Table.vue'
 
   export default {

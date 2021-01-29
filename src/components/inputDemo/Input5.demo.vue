@@ -1,15 +1,15 @@
 <demo>
-  disabled样式!不可操作#无法点击输入框
+  placeholder样式!placeholder#使用placeholder来控制输入提示信息。
 </demo>
 
 <template>
   <label>
-    <Input model-value="王五" disabled/>
+    <Input placeholder="请输入内容"/>
   </label>
 </template>
 
 <script>
-  import Input from '../lib/Input.vue'
+  import Input from '../../lib/Input.vue'
 
   export default {
     name: "Input1.demo",

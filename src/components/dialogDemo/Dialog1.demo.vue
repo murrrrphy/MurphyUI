@@ -4,7 +4,7 @@
 
 <template>
     <Button @click="showDialog">打开对话框</Button>
-    <Dialog v-model:visible="x"
+    <Dialog v-model:visible="dialogVisible"
             :closeOnClickOverlay="false"
             :ok="f1"
             :cancel="f2">
@@ -19,8 +19,8 @@
 </template>
 
 <script lang="ts">
-    import Button from "../lib/Button.vue";
-    import Dialog from "../lib/Dialog.vue";
+    import Button from "../../lib/Button.vue";
+    import Dialog from "../../lib/Dialog.vue";
     import {ref} from "vue";
 
     export default {
@@ -30,18 +30,18 @@
             Dialog
         },
         setup() {
-            const x = ref(false);
+            const dialogVisible = ref(false);
             const showDialog = () => {
-                x.value = true;
+                dialogVisible.value = true;
             };
             const f1 = () => {
-                x.value = false;
+                dialogVisible.value = false;
             };
             const f2 = () => {
-                x.value = false;
+                dialogVisible.value = false;
             };
             return {
-                x,
+                dialogVisible,
                 showDialog,
                 f1,
                 f2

@@ -38,8 +38,8 @@
 </template>
 
 <script lang="ts">
-  import Button from '../lib/Button.vue';
-  import Dialog from '../lib/Dialog.vue';
+  import Button from '../../lib/Button.vue';
+  import Dialog from '../../lib/Dialog.vue';
   import {ref} from 'vue';
 
   export default {

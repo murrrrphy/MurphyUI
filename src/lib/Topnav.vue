@@ -13,7 +13,7 @@
 
 <script lang="ts">
   import {inject, Ref} from 'vue';
-  import Icon from '../lib/Icon.vue';
+  import Icon from './Icon.vue';
 
   export default {
     name: 'Topnav.vue',

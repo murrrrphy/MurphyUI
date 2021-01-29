@@ -43,9 +43,9 @@
 </template>
 
 <script lang="ts">
-  import Topnav from '../components/Topnav.vue';
+  import Topnav from '../lib/Topnav.vue';
   import {inject, Ref} from 'vue';
-  import Footer from '../components/Footer.vue';
+  import Footer from '../lib/Footer.vue';
 
   export default {
     name: 'Doc.vue',

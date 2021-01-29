@@ -14,10 +14,10 @@
 </template>
 
 <script lang="ts">
-  import Demo from './Demo.vue';
-  import Dialog1Demo from './Dialog1.demo.vue';
-  import Dialog2Demo from './Dialog2.demo.vue';
-  import Dialog3Demo from './Dialog3.demo.vue';
+  import Demo from '../lib/Demo.vue';
+  import Dialog1Demo from './dialogDemo/Dialog1.demo.vue';
+  import Dialog2Demo from './dialogDemo/Dialog2.demo.vue';
+  import Dialog3Demo from './dialogDemo/Dialog3.demo.vue';
   import Table from '../lib/Table.vue';
 
   export default {
@@ -98,5 +98,5 @@
 </script>
 
 <style lang="scss" scoped>
-  @import 'index'
+  @import 'index';
 </style>
