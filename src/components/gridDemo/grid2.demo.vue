@@ -1,28 +1,19 @@
 <demo>
-  常规使用!基础栅格#从堆叠到水平排列。
-  使用单一的一组 Row 和 Col 栅格组件，就可以创建一个基本的栅格系统，所有列（Col）必须放在 Row 内。
+  栅格偏移!偏移栅格#使用offset属性使栅格发生偏移，不用整行全部填充col
 </demo>
 
 <template>
   <Row>
-    <Col :span="12">col-12</Col>
-    <Col :span="12">col-12</Col>
+    <Col :span="8">col-8</Col>
+    <Col :span="8" offset="8">col-8</Col>
+  </Row>
+  <Row>
+    <Col :span="8" offset="8">col-8</Col>
+    <Col :span="8">col-8</Col>
   </Row>
   <Row>
     <Col :span="8">col-8</Col>
-    <Col :span="16">col-16</Col>
-
-  </Row>
-  <Row>
     <Col :span="8">col-8</Col>
-    <Col :span="8">col-8</Col>
-    <Col :span="8">col-8</Col>
-  </Row>
-  <Row>
-    <Col :span="6">col-6</Col>
-    <Col :span="6">col-6</Col>
-    <Col :span="6">col-6</Col>
-    <Col :span="6">col-6</Col>
   </Row>
 </template>
 
@@ -31,7 +22,7 @@
   import Col from '../../lib/Col.vue'
 
   export default {
-    name: "grid1.demo",
+    name: "grid2.demo",
     components: {Col, Row}
   }
 </script>

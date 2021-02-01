@@ -1,9 +1,7 @@
 <template>
   <div class="col" :class="colClass"
        :style="colStyle">
-    <div style="border: 1px solid green; height: 100px;">
-      <slot/>
-    </div>
+    <slot/>
   </div>
 </template>
 
@@ -26,17 +24,11 @@
       })
       const colStyle = computed(()=>{
         if(gutter){
-          if(typeof gutter === 'number'){
-            return {
-              paddingLeft: gutter/2+'px',
-              paddingRight: gutter/2+'px'
-            }
-          }else {
-            let number = parseInt(gutter)
-            return {
-              paddingLeft: number/2+'px',
-              paddingRight: number/2+'px'
-            }
+          let number
+          typeof gutter ==='number' ? number = gutter : number = parseInt(gutter)
+          return {
+            marginLeft: number/2+'px',
+            marginRight: number/2+'px'
           }
         }
       })
@@ -47,7 +39,7 @@
 
 <style lang="scss" scoped>
   .col {
-    width: 100%;
+    height: 80px;
 
     $class-prefix: col-;
     @for $n from 1 through 24 {
