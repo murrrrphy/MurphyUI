@@ -154,6 +154,7 @@
   }
 </style>
 <style lang="scss" scoped>
+  @import "index";
   .row {
     margin-bottom: 10px;
 
