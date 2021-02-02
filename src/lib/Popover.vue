@@ -1,34 +1,58 @@
 <template>
   <div class="popover" @click.stop="toggle">
-    <div class="content-wrapper" v-if="visible" @click.stop>
+    <div ref="contentRef" class="content-wrapper" v-if="visible" @click.stop>
       <slot name="content"></slot>
     </div>
-    <slot></slot>
+    <span ref="triggerRef">
+      <slot></slot>
+    </span>
   </div>
 </template>
 
 <script lang="ts">
-  import {ref,nextTick} from 'vue';
+  import {ref, nextTick} from 'vue';
 
   export default {
-    name: "Popover",
+    name: 'Popover',
     setup() {
-      let visible = ref(false)
-      const toggle = () => {
-        visible.value = !visible.value;
-        if(visible.value === true) {
-          setTimeout(()=> {
-            let eventHandler = () => {
-              visible.value = false
-              document.removeEventListener('click',eventHandler)
-            }
-            document.addEventListener('click',eventHandler)
-          },0)
+      const contentRef = ref<HTMLDivElement | null>(null);
+      const triggerRef = ref<HTMLSpanElement | null>(null);
+      let visible = ref(false);
+      const positionContent = () => {
+        document.body.appendChild(contentRef.value!);
+        const {width, height, top, left} = triggerRef.value!.getBoundingClientRect();
+        contentRef.value!.style.left = left + window.scrollX + 'px';
+        contentRef.value!.style.top = top + window.scrollY + 'px';
+      };
+      const onClickDocument = (e: { target: Node | null; }) => {
+        if (contentRef.value && contentRef.value!.contains(e.target)) {
+          return;
         }
-      }
-      return {visible,toggle}
+        close();
+      };
+      const open = () => {
+        visible.value = true;
+        nextTick(() => {
+          positionContent();
+          document.addEventListener('click', onClickDocument);
+        });
+      };
+      const close = () => {
+        visible.value = false;
+        document.removeEventListener('click', onClickDocument);
+      };
+      const toggle = (event: { target: Node | null; }) => {
+        if (triggerRef.value!.contains(event.target)) {
+          if (visible.value === true) {
+            close();
+          } else {
+            open();
+          }
+        }
+      };
+      return {visible, toggle, contentRef, triggerRef};
     }
-  }
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -36,12 +60,13 @@
     display: inline-block;
     vertical-align: top;
     position: relative;
-    .content-wrapper {
-      position: absolute;
-      bottom: 100%;
-      left: 0;
-      border: 1px solid red;
-      box-shadow: 0 0 3px rgba(0,0,0,0.5)
-    }
+  }
+
+  .content-wrapper {
+    z-index: 30;
+    position: absolute;
+    border: 1px solid red;
+    transform: translateY(-100%);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5)
   }
 </style>

@@ -35,9 +35,6 @@
           <li>
             <router-link to="/doc/grid">Grid 组件</router-link>
           </li>
-<!--          <li>-->
-<!--            <router-link to="/doc/toast">Toast 组件</router-link>-->
-<!--          </li>-->
           <li>
             <router-link to="/doc/popover">Popover 组件</router-link>
           </li>
@@ -79,7 +76,10 @@
       margin-left: 150px;
       line-height: 64px;
       text-align: center;
-      color: #aaa
+      color: #aaa;
+      @media (max-width: 500px) {
+        margin: 0;
+      }
     }
 
     > .nav {
