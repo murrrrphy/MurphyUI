@@ -1,15 +1,17 @@
 import './lib/murphy.scss';
 import './index.scss';
-import { createApp } from 'vue';
+import {createApp} from 'vue';
 import App from './App.vue';
-import { router } from './router';
+import {router} from './router';
 import 'github-markdown-css';
-import Markdown from "./lib/Markdown.vue"
+import Markdown from './lib/Markdown.vue';
+// @ts-ignore
+import toast from '../plugins/plugin.js';
 
 
-
-const app=createApp(App)
-app.use(router)
-app.mount('#app')
-app.component("Markdown",Markdown)
+const app = createApp(App);
+app.use(router);
+app.use(toast);
+app.mount('#app');
+app.component('Markdown', Markdown);
 
