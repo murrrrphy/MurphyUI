@@ -3,30 +3,58 @@
 </demo>
 
 <template>
-  <Popover>
-    <template v-slot:content>
-      <div>pop内容11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</div>
-    </template>
-    <Button>点我</Button>
-  </Popover>
-  <Popover position="bottom">
-    <template v-slot:content>
-      <div>pop内容11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</div>
-    </template>
-    <Button>点我</Button>
-  </Popover>
-  <Popover position="left">
-    <template v-slot:content>
-      <div>pop内容11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</div>
-    </template>
-    <Button>点我</Button>
-  </Popover>
-  <Popover position="right">
-    <template v-slot:content>
-      <div>pop内容11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</div>
-    </template>
-    <Button>点我</Button>
-  </Popover>
+  <div class="wrapper">
+    <Popover>
+      <template v-slot:content>
+        <div>pop内容</div>
+      </template>
+      <Button>点我</Button>
+    </Popover>
+    <Popover position="bottom">
+      <template v-slot:content>
+        <div>pop内容</div>
+      </template>
+      <Button>点我</Button>
+    </Popover>
+    <Popover position="left">
+      <template v-slot:content>
+        <div>pop内容</div>
+      </template>
+      <Button>点我</Button>
+    </Popover>
+    <Popover position="right">
+      <template v-slot:content>
+        <div>pop内容</div>
+      </template>
+      <Button>点我</Button>
+    </Popover>
+  </div>
+  <div class="wrapper">
+    <Popover trigger="hover">
+      <template v-slot:content>
+        <div>pop内容</div>
+      </template>
+      <Button>点我</Button>
+    </Popover>
+    <Popover position="bottom" trigger="hover">
+      <template v-slot:content>
+        <div>pop内容</div>
+      </template>
+      <Button>点我</Button>
+    </Popover>
+    <Popover position="left" trigger="hover">
+      <template v-slot:content>
+        <div>pop内容</div>
+      </template>
+      <Button>点我</Button>
+    </Popover>
+    <Popover position="right" trigger="hover">
+      <template v-slot:content>
+        <div>pop内容</div>
+      </template>
+      <Button>点我</Button>
+    </Popover>
+  </div>
 </template>
 
 <script lang="ts">
@@ -40,5 +68,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+  .popover {
+    margin: 10px;
+  }
 </style>

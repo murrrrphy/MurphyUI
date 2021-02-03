@@ -1,9 +1,8 @@
 <template>
-  <div class="popover" @click.stop="toggle">
+  <div class="popover"  ref="popoverRef">
     <div ref="contentRef"
          class="content-wrapper"
          v-if="visible"
-         @click.stop
          :class="{[`position-${position}`]: true}">
       <slot name="content"></slot>
     </div>
@@ -14,7 +13,7 @@
 </template>
 
 <script lang="ts">
-  import {ref, nextTick} from 'vue';
+  import {ref, nextTick, onMounted} from 'vue';
 
   export default {
     name: 'Popover',
@@ -25,12 +24,28 @@
         validator(value: string) {
           return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0;
         }
+      },
+      trigger: {
+        type: String,
+        default: 'click',
+        validator(value: string) {
+          return ['click','hover'].indexOf(value) >= 0;
+        }
       }
     },
-    setup(props: { position: string }) {
+    setup(props: { position: string, trigger: string }) {
       const contentRef = ref<HTMLDivElement | null>(null);
       const triggerRef = ref<HTMLSpanElement | null>(null);
+      const popoverRef = ref<HTMLDivElement | null>(null);
       let visible = ref(false);
+      onMounted(()=>{
+        if(props.trigger === 'click'){
+          popoverRef.value!.addEventListener('click', toggle)
+        }else {
+          popoverRef.value!.addEventListener('mouseenter', open)
+          popoverRef.value!.addEventListener('mouseleave', close)
+        }
+      })
       const positionContent = () => {
         document.body.appendChild(contentRef.value!);
         const {width, height, top, left} = triggerRef.value!.getBoundingClientRect();
@@ -51,10 +66,13 @@
         }
       };
       const onClickDocument = (e: { target: Node | null; }) => {
-        if (contentRef.value && contentRef.value!.contains(e.target)) {
-          return;
-        }
-        close();
+        if (popoverRef.value &&
+          (popoverRef.value === e.target || popoverRef.value.contains(e.target))
+        ) { return }
+        if (contentRef.value &&
+          (contentRef.value === e.target || contentRef.value.contains(e.target))
+        ) { return }
+        close()
       };
       const open = () => {
         visible.value = true;
@@ -76,7 +94,7 @@
           }
         }
       };
-      return {visible, toggle, contentRef, triggerRef};
+      return {visible, toggle, contentRef, triggerRef, popoverRef};
     }
   };
 </script>
