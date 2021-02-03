@@ -5,18 +5,37 @@
 <template>
   <Popover>
     <template v-slot:content>
-      <div>pop内容</div>
+      <div>pop内容11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</div>
     </template>
-    <button>点我</button>
+    <Button>点我</Button>
+  </Popover>
+  <Popover position="bottom">
+    <template v-slot:content>
+      <div>pop内容11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</div>
+    </template>
+    <Button>点我</Button>
+  </Popover>
+  <Popover position="left">
+    <template v-slot:content>
+      <div>pop内容11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</div>
+    </template>
+    <Button>点我</Button>
+  </Popover>
+  <Popover position="right">
+    <template v-slot:content>
+      <div>pop内容11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</div>
+    </template>
+    <Button>点我</Button>
   </Popover>
 </template>
 
 <script lang="ts">
-  import Popover from '../../lib/Popover.vue'
+  import Popover from '../../lib/Popover.vue';
+  import Button from '../../lib/Button.vue';
 
   export default {
     name: "Popover1.demo.vue",
-    components: {Popover}
+    components: {Popover,Button}
   }
 </script>
 
