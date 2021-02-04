@@ -43,10 +43,10 @@
     </li>
     <li>如果一个row中的col总和超过 24，那么多余的col会作为一个整体另起一行排列</li>
   </ol>
-  <Demo :component="Grid1Demo"/>
-  <Demo :component="Grid2Demo"/>
-  <Demo :component="Grid3Demo"/>
-  <Demo :component="Grid4Demo"/>
+  <Demo width="long" :component="Grid1Demo"/>
+  <Demo width="long" :component="Grid2Demo"/>
+  <Demo width="long" :component="Grid3Demo"/>
+  <Demo width="long" :component="Grid4Demo"/>
   <h2>API</h2>
   <h3>Row</h3>
   <Table :columns="columns1" :data="data1"/>
@@ -148,11 +148,6 @@
   };
 </script>
 
-<style lang="scss">
-  .demo {
-    width: 100%;
-  }
-</style>
 <style lang="scss" scoped>
   @import "index";
   .row {

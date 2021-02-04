@@ -4,7 +4,7 @@
          class="content-wrapper"
          v-if="visible"
          :class="{[`position-${position}`]: true}">
-      <slot name="content"></slot>
+      <slot name="content" :close="close"></slot>
     </div>
     <span ref="triggerRef" style="display: inline-block;">
       <slot></slot>
@@ -94,7 +94,7 @@
           }
         }
       };
-      return {visible, toggle, contentRef, triggerRef, popoverRef};
+      return {visible, toggle, contentRef, triggerRef, popoverRef, close};
     }
   };
 </script>
@@ -134,6 +134,7 @@
 
       &::before, &::after {
         left: 10px;
+        border-bottom: none;
       }
 
       &::before {
@@ -152,6 +153,7 @@
 
       &::before, &::after {
         left: 10px;
+        border-top: none;
       }
 
       &::before {
@@ -171,7 +173,8 @@
 
       &::before, &::after {
         transform: translateY(-50%);
-        top: 50%
+        top: 50%;
+        border-right: none;
       }
 
       &::before {
@@ -190,7 +193,8 @@
 
       &::before, &::after {
         transform: translateY(-50%);
-        top: 50%
+        top: 50%;
+        border-left: none;
       }
 
       &::before {

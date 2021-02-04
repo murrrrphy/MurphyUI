@@ -1,5 +1,5 @@
 <template>
-    <div class="demo">
+    <div class="demo" :style="width==='long'?'width: 100%':'width: 500px'">
         <h2>{{Header}}</h2>
         <div class="demo-component">
             <component :is="component"/>
@@ -33,6 +33,7 @@
         },
         props: {
             component: Object,
+            width: String
         },
         setup(props: any) {
             const html = computed(() => {
@@ -64,11 +65,6 @@
     }
 </script>
 
-<style lang="scss">
-    .demo {
-        width: 500px;
-    }
-</style>
 <style lang="scss" scoped>
     $border-color: #d9d9d9;
     .demo {
