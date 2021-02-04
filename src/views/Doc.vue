@@ -49,9 +49,9 @@
 </template>
 
 <script lang="ts">
-  import Topnav from '../lib/Topnav.vue';
+  import Topnav from '../components/Topnav.vue';
   import {inject, Ref} from 'vue';
-  import Footer from '../lib/Footer.vue';
+  import Footer from '../components/Footer.vue';
 
   export default {
     name: 'Doc.vue',
@@ -112,8 +112,8 @@
   }
 
   aside {
-    background: #4457c0;
-    color: #eff8ff;
+    background: white;
+    border-right: 1px solid #e8e8e8;
     width: 150px;
     padding-bottom: 16px;
     position: fixed;
@@ -134,12 +134,15 @@
         > a {
           display: block;
           padding: 4px 16px;
+          &:hover {
+            color: #46b3e8;
+          }
         }
 
         .router-link-active {
-          color: #4abc88;
-          font-weight: bold;
-          background: white;
+          color: #46b3e8;
+          background: #e6f7ff;
+          border-right: 3px solid #1890ff;
         }
       }
     }

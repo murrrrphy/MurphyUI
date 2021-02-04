@@ -34,9 +34,9 @@
 </template>
 
 <script lang="ts">
-  import Topnav from '../lib/Topnav.vue';
-  import Footer from '../lib/Footer.vue';
-  import Icon from '../lib/Icon.vue';
+  import Topnav from '../components/Topnav.vue';
+  import Footer from '../components/Footer.vue';
+  import Icon from '../components/Icon.vue';
 
   export default {
     components: {Icon, Footer, Topnav},
@@ -48,7 +48,8 @@
   $border-radius: 4px;
   $color: #286b68;
   .topnavAndBanner {
-    background: rgb(69, 88, 193);
+    background: #1978AA;
+    background: linear-gradient(to top, #1978AA, #98DCFF);
     clip-path: ellipse(80% 60% at 50% 40%);
     height: 55vh;
   }

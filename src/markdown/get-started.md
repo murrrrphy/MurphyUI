@@ -4,7 +4,7 @@
 然后在你的代码中写入下面的代码
 
 ```
-import {Button, Tabs, Switch, Dialog} from "murphy-ui"
+import {Button, Tabs, Switch, Dialog, Popover, Row, Col} from "murphy-ui"
 ```
 
 就可以使用我提供的组件了。
@@ -15,12 +15,11 @@ import {Button, Tabs, Switch, Dialog} from "murphy-ui"
 
 ```
 <template>
-  <div>
     <Button>按钮</Button>
-  </div>
 </template>
+
 <script>
-import {Button, Tabs, Switch, Dialog} from "murphy-ui"
+import {Button} from "murphy-ui"
 export default {
   components: {Button}
 }
