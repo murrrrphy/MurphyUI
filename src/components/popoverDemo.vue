@@ -6,7 +6,7 @@
       <Demo :component="Popover2Demo"/>
     </div>
     <div class="inlineBlock">
-      <Demo :component="Popover3Demo"/>
+      <Demo :component="Popover3Demo"/>2
       <Demo :component="Popover4Demo"/>
     </div>
   </div>

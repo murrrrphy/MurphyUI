@@ -7,7 +7,6 @@ import DialogDemo from "./components/DialogDemo.vue";
 import TabsDemo from "./components/TabsDemo.vue";
 import InputDemo from "./components/InputDemo.vue";
 import GridDemo from "./components/GridDemo.vue";
-import ToastDemo from "./components/toastDemo.vue";
 import PopoverDemo from "./components/popoverDemo.vue";
 import {h} from "vue";
 import Markdown from "./lib/Markdown.vue";

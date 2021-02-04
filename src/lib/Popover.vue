@@ -1,5 +1,5 @@
 <template>
-  <div class="popover"  ref="popoverRef">
+  <div class="popover" ref="popoverRef">
     <div ref="contentRef"
          class="content-wrapper"
          v-if="visible"
@@ -13,7 +13,8 @@
 </template>
 
 <script lang="ts">
-  import {ref, nextTick, onMounted} from 'vue';
+  import {ref, nextTick, onMounted, watch} from 'vue';
+  import {useRoute} from 'vue-router';
 
   export default {
     name: 'Popover',
@@ -29,23 +30,29 @@
         type: String,
         default: 'click',
         validator(value: string) {
-          return ['click','hover'].indexOf(value) >= 0;
+          return ['click', 'hover'].indexOf(value) >= 0;
         }
       }
     },
     setup(props: { position: string, trigger: string }) {
+      const route = useRoute();
       const contentRef = ref<HTMLDivElement | null>(null);
       const triggerRef = ref<HTMLSpanElement | null>(null);
       const popoverRef = ref<HTMLDivElement | null>(null);
       let visible = ref(false);
-      onMounted(()=>{
-        if(props.trigger === 'click'){
-          popoverRef.value!.addEventListener('click', toggle)
-        }else {
-          popoverRef.value!.addEventListener('mouseenter', open)
-          popoverRef.value!.addEventListener('mouseleave', close)
+      onMounted(() => {
+        if (props.trigger === 'click') {
+          popoverRef.value!.addEventListener('click', toggle);
+        } else {
+          popoverRef.value!.addEventListener('mouseenter', open);
+          popoverRef.value!.addEventListener('mouseleave', close);
         }
-      })
+      });
+      watch(() => route.path, () => {
+        if(contentRef.value){
+          contentRef.value.parentNode!.removeChild(contentRef.value)
+        }
+      });
       const positionContent = () => {
         document.body.appendChild(contentRef.value!);
         const {width, height, top, left} = triggerRef.value!.getBoundingClientRect();
@@ -68,11 +75,15 @@
       const onClickDocument = (e: { target: Node | null; }) => {
         if (popoverRef.value &&
           (popoverRef.value === e.target || popoverRef.value.contains(e.target))
-        ) { return }
+        ) {
+          return;
+        }
         if (contentRef.value &&
           (contentRef.value === e.target || contentRef.value.contains(e.target))
-        ) { return }
-        close()
+        ) {
+          return;
+        }
+        close();
       };
       const open = () => {
         visible.value = true;
