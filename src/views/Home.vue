@@ -48,7 +48,6 @@
   $border-radius: 4px;
   $color: #286b68;
   .topnavAndBanner {
-    background: #1978AA;
     background: linear-gradient(to top, #1978AA, #98DCFF);
     clip-path: ellipse(80% 60% at 50% 40%);
     height: 55vh;
