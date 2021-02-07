@@ -3,11 +3,9 @@
     <div class="title" @click="toggle">
       {{title}}
     </div>
-    <transition name="switch">
-      <div class="content" v-if="visible">
-        <slot></slot>
-      </div>
-    </transition>
+    <div class="content" v-if="visible">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
