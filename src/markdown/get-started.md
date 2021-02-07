@@ -19,9 +19,9 @@ import {Button, Tabs, Switch, Dialog, Popover, Row, Col} from "murphy-ui"
 </template>
 
 <script>
-import {Button} from "murphy-ui"
-export default {
-  components: {Button}
-}
+    import {Button} from "murphy-ui"
+    export default {
+        components: {Button}
+    }
 </script>
 ```
