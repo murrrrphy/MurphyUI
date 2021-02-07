@@ -1,8 +1,12 @@
 <template>
   <h1>Tabs 示例</h1>
   <div class="demoWrapper">
-    <Demo :component="TabsDemo1"/>
-    <Demo :component="TabsDemo2"/>
+    <div class="inlineBlock">
+      <Demo :component="TabsDemo1"/>
+    </div>
+    <div class="inlineBlock">
+      <Demo :component="TabsDemo2"/>
+    </div>
   </div>
   <h2>API</h2>
   <h3>Tabs</h3>
