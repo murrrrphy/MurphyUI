@@ -1,5 +1,5 @@
 <demo>
-  常规使用!基本#collapse的基本用法
+  默认打开!用法#初始给selected一个值来控制打开哪一个
 </demo>
 
 <template>
@@ -22,13 +22,13 @@
 <script>
   import Collapse from '../../components/Collapse.vue'
   import CollapseItem from '../../components/CollapseItem.vue'
-  import {ref} from 'vue'
+  import {ref} from 'vue';
 
   export default {
-    name: "Collapse1.demo",
+    name: "Collapse3.demo",
     components: {CollapseItem, Collapse},
-    setup() {
-      const selectedList = ref([])
+    setup(){
+      const selectedList = ref(['1', '2'])
       return {selectedList}
     }
   }

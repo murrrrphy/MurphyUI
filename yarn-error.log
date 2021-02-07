@@ -1,8 +1,8 @@
 Arguments: 
-  C:\software\nodejs\node.exe C:\software\Yarn\bin\yarn.js add --dev svgo-loader
+  C:\software\nodejs\node.exe C:\software\Yarn\bin\yarn.js add @types/mitt
 
 PATH: 
-  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\qyc_m\bin;C:\repository\Murphy-UI\node_modules\.bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;.;C:\database\mysql-8.0.20-winx64\bin";C:\Maven\apache-maven-3.6.3\bin;C:\Idea\JDK\bin;C:\Idea\JDK\jre\bin;C:\Idea\apache-tomcat-9.0.34\bin;C:\Idea\redis64-3.0.501;C:\nodejs\node_cache\bin;C:\Program Files\Git\cmd;C:\Users\qyc_m\AppData\Roaming\npm;C:\software\nodejs;C:\software\Yarn\bin;C:\Users\qyc_m\AppData\Local\Microsoft\WindowsApps;C:\Users\qyc_m\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files (x86)\Yarn;C:\Users\qyc_m\AppData\Roaming\npm;C:\Users\qyc_m\AppData\Local\Yarn\bin
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\qyc_m\bin;C:\repository\Murphy-UI\node_modules\.bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;.;C:\database\mysql-8.0.20-winx64\bin";C:\Maven\apache-maven-3.6.3\bin;C:\Idea\JDK\bin;C:\Idea\JDK\jre\bin;C:\Idea\apache-tomcat-9.0.34\bin;C:\Idea\redis64-3.0.501;C:\nodejs\node_cache\bin;C:\Program Files\Git\cmd;C:\Users\qyc_m\AppData\Roaming\npm;C:\software\nodejs;C:\software\Yarn\bin;C:\Users\qyc_m\AppData\Local\Microsoft\WindowsApps;C:\Users\qyc_m\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files (x86)\Yarn;C:\Users\qyc_m\AppData\Roaming\npm;C:\Users\qyc_m\AppData\Local\Yarn\bin
 
 Yarn version: 
   1.22.5
@@ -14,7 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\repository\Murphy-UI\node_modules\esbuild\esbuild.exe'
+  Error: https://registry.npm.taobao.org/@types%2fmitt: Not found
+      at Request.params.callback [as _callback] (C:\software\Yarn\lib\cli.js:66097:18)
+      at Request.self.callback (C:\software\Yarn\lib\cli.js:140749:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (C:\software\Yarn\lib\cli.js:141721:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (C:\software\Yarn\lib\cli.js:141643:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (internal/streams/readable.js:1327:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
 
 npm manifest: 
   {
@@ -31,6 +41,7 @@ npm manifest:
     "dependencies": {
       "github-markdown-css": "^4.0.0",
       "marked": "^1.1.1",
+      "mitt": "^2.1.0",
       "prismjs": "^1.21.0",
       "vue": "^3.0.0",
       "vue-router": "4.0.0-beta.6"
@@ -43,6 +54,7 @@ npm manifest:
       "rollup-plugin-vue": "^6.0.0-beta.10",
       "sass": "^1.26.11",
       "svg-sprite-loader": "^5.2.1",
+      "svgo-loader": "^2.2.1",
       "vite": "^1.0.0-rc.1"
     }
   }
@@ -84,7 +96,7 @@ Lockfile:
   "@babel/parser@^7.11.5":
     version "7.11.5"
     resolved "https://registry.npm.taobao.org/@babel/parser/download/@babel/parser-7.11.5.tgz#c7ff6303df71080ec7a4f5b8c003c58f1cf51037"
-    integrity sha1-dialogVisible/9jA99xCA7HpPW4wAPFjxz1EDc=
+    integrity sha1-x/9jA99xCA7HpPW4wAPFjxz1EDc=
   
   "@babel/types@^7.10.4":
     version "7.11.0"
@@ -2390,7 +2402,7 @@ Lockfile:
       pinkie-promise "^2.0.0"
       strip-bom "^2.0.0"
   
-  loader-utils@^1.1.0:
+  loader-utils@^1.0.3, loader-utils@^1.1.0:
     version "1.4.0"
     resolved "https://registry.npm.taobao.org/loader-utils/download/loader-utils-1.4.0.tgz#c579b5e34cb34b1a74edc6c1fb36bfa371d5a613"
     integrity sha1-xXm140yzSxp07cbB+za/o3HVphM=
@@ -2587,6 +2599,11 @@ Lockfile:
     resolved "https://registry.npm.taobao.org/mitt/download/mitt-1.1.2.tgz#380e61480d6a615b660f07abb60d51e0a4e4bed6"
     integrity sha1-OA5hSA1qYVtmDwertg1R4KTkvtY=
   
+  mitt@^2.1.0:
+    version "2.1.0"
+    resolved "https://registry.npm.taobao.org/mitt/download/mitt-2.1.0.tgz?cache=0&sync_timestamp=1594823636076&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmitt%2Fdownload%2Fmitt-2.1.0.tgz#f740577c23176c6205b121b2973514eade1b2230"
+    integrity sha1-90BXfCMXbGIFsSGylzUU6t4bIjA=
+  
   mixin-deep@^1.2.0:
     version "1.3.2"
     resolved "https://registry.npm.taobao.org/mixin-deep/download/mixin-deep-1.3.2.tgz#1120b43dc359a785dce65b55b82e257ccf479566"
@@ -2675,6 +2692,29 @@ Lockfile:
       semver "~5.3.0"
       tar "^2.0.0"
       which "1"
+  
+  node-sass@4:
+    version "4.14.1"
+    resolved "https://registry.npm.taobao.org/node-sass/download/node-sass-4.14.1.tgz?cache=0&sync_timestamp=1604150672615&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-sass%2Fdownload%2Fnode-sass-4.14.1.tgz#99c87ec2efb7047ed638fb4c9db7f3a42e2217b5"
+    integrity sha1-mch+wu+3BH7WOPtMnbfzpC4iF7U=
+    dependencies:
+      async-foreach "^0.1.3"
+      chalk "^1.1.1"
+      cross-spawn "^3.0.0"
+      gaze "^1.0.0"
+      get-stdin "^4.0.1"
+      glob "^7.0.3"
+      in-publish "^2.0.0"
+      lodash "^4.17.15"
+      meow "^3.7.0"
+      mkdirp "^0.5.1"
+      nan "^2.13.2"
+      node-gyp "^3.8.0"
+      npmlog "^4.0.0"
+      request "^2.88.0"
+      sass-graph "2.2.5"
+      stdout-stream "^1.4.0"
+      "true-case-path" "^1.0.2"
   
   "nopt@2 || 3":
     version "3.0.6"
@@ -3900,6 +3940,14 @@ Lockfile:
       svg-baker "^1.5.0"
       svg-baker-runtime "^1.4.7"
       url-slug "2.0.0"
+  
+  svgo-loader@^2.2.1:
+    version "2.2.1"
+    resolved "https://registry.npm.taobao.org/svgo-loader/download/svgo-loader-2.2.1.tgz#ca1c9ad22e120bb45a5250233737da4d85521704"
+    integrity sha1-yhya0i4SC7RaUlAjNzfaTYVSFwQ=
+    dependencies:
+      js-yaml "^3.13.1"
+      loader-utils "^1.0.3"
   
   tar@^2.0.0:
     version "2.2.2"

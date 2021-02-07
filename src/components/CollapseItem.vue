@@ -3,14 +3,16 @@
     <div class="title" @click="toggle">
       {{title}}
     </div>
-    <div class="content" v-if="open">
-      <slot></slot>
-    </div>
+    <transition name="switch">
+      <div class="content" v-if="visible">
+        <slot></slot>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script lang="ts">
-  import {ref} from 'vue';
+  import {ref, inject, onMounted} from 'vue';
 
   export default {
     name: 'CollapseItem',
@@ -18,14 +20,28 @@
       title: {
         type: String,
         required: true,
+      },
+      name: {
+        type: String,
+        required: true
       }
     },
-    setup() {
-      const open = ref(false);
+    setup(props: { name: string }) {
+      const visible = ref(false);
+      const emitter = inject<{ emit: Function, all: Object, on: Function, off: Function }>('eventBus');
       const toggle = () => {
-        open.value = !open.value;
+        if (visible.value) {
+          emitter && emitter.emit('update:removeSelected', props.name);
+        } else {
+          emitter && emitter.emit('update:addSelected', props.name);
+        }
       };
-      return {open,toggle};
+      onMounted(() => {
+        emitter && emitter.on('update:selected', (names: string[]) => {
+          visible.value = names.indexOf(props.name) >= 0;
+        });
+      });
+      return {visible: visible, toggle};
     }
   };
 </script>
@@ -59,6 +75,11 @@
 
     > .content {
       padding: 8px;
+      word-break: break-all;
+    }
+
+    > .content:last-child {
+      border-bottom: 1px solid $grey;
     }
   }
 </style>
