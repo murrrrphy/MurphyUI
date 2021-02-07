@@ -1,6 +1,6 @@
 {
   "name": "murphy-ui",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "files": [
     "dist/lib/*"
   ],
@@ -8,6 +8,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build"
+  },
+  "resolutions": {
+    "node-sass": "npm:sass@^1.26.11"
   },
   "dependencies": {
     "github-markdown-css": "^4.0.0",
